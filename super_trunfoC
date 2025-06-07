@@ -1,0 +1,91 @@
+//Desafio1 usando estruturas basicas(printf e scanf) para armazenar duas cartas de super trunfo
+
+#include <stdio.h>
+
+int main() {
+
+    // Primeira carta
+    char est1;
+    char codcar1[3]; // 2 caracteres + enter
+    char cid1[21];   //  20 caracteres + enter
+    int pop1;
+    int npt1;
+    double area1; 
+    double pib1;  
+
+    // Segunda carta
+    char est2;
+    char codcar2[3]; 
+    char cid2[21];   
+    int pop2;
+    int npt2;
+    double area2; 
+    double pib2;  
+
+    // Leitura da primeira carta
+    printf("Digite a letra do 1º estado: ");
+    scanf(" %c", &est1); 
+
+    printf("Digite o codigo do 1º estado (2 caracteres): ");
+    scanf("%2s", codcar1);
+
+    printf("Digite a cidade do 1º estado (ate 20 caracteres): ");
+    scanf("%20s", cid1); 
+
+    printf("Digite a população do 1º estado: ");
+    scanf("%d", &pop1);
+
+    printf("Digite a Área do 1º estado: ");
+    scanf("%lf", &area1); 
+
+    printf("Digite o PIB do 1º estado: ");
+    scanf("%lf", &pib1); 
+
+    printf("Digite o número de pontos turisticos da 1º cidade: ");
+    scanf("%d", &npt1);
+
+    // Leitura 2 carta
+    printf("\nDigite a letra do 2º estado: ");
+    scanf(" %c", &est2);
+
+    printf("Digite o codigo do 2º estado (2 caracteres): "); 
+    scanf("%2s", codcar2); 
+
+    printf("Digite a cidade do 2º estado (ate 20 caracteres): ");
+    scanf("%20s", cid2);
+
+    printf("Digite a população do 2º estado: ");
+    scanf("%d", &pop2);
+
+    printf("Digite a Área do 2º estado: ");
+    scanf("%lf", &area2); 
+
+    printf("Digite o PIB do 2º estado: ");
+    scanf("%lf", &pib2); 
+
+    printf("Digite o número de pontos turisticos da 2º cidade: ");
+    scanf("%d", &npt2);
+
+    //exibição carta 1
+    printf("\n\nCarta 1:\n");
+    printf("Estado: %c\n", est1);
+    printf("Codigo: %c%s\n", est1, codcar1);
+    printf("Cidade: %s\n", cid1);
+    printf("População: %d\n", pop1);
+    printf("Área: %.4f km²\n", area1);     
+    printf("PIB: %.2f\n", pib1);       
+    printf("Pontos Turisticos: %d\n", npt1);
+
+    //exibição carta 2
+    printf("\nCarta 2:\n");
+    printf("Estado: %c\n", est2);
+    printf("Codigo: %c%s\n", est2, codcar2);
+    printf("Cidade: %s\n", cid2);
+    printf("População: %d\n", pop2);
+    printf("Área: %.4fkm²\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Pontos Turisticos: %d\n", npt2);
+    
+    // fim do programa
+    return 0;
+}
