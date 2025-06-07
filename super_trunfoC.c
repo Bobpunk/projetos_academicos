@@ -1,5 +1,8 @@
-//Desafio1 usando estruturas basicas(printf e scanf) para armazenar duas cartas de super trunfo
-//Desafio2 Adicionei calculos precisos usando os conceitos de conversão de tipagem de dados 
+//Desafio1 -->usando estruturas basicas(printf e scanf) para armazenar duas cartas de super trunfo
+//Desafio2 ~~> Adicionei calculos precisos usando os conceitos de conversão de tipagem de dados 
+/*Desafio 3 ~~> Adicionei o novo atributo super poder que consiste na soma de todos os atributos numéricos
++ o inverso da densidade populacional*. o atributo superpoder a carta com o menor valor vence. 
+Também fiz a comparação das duas cartas decidindo quem vence usando operadores relacionais*/
 
 // desafio cartas do supertrunfo
 #include <stdio.h>
@@ -68,9 +71,8 @@ int main() {
     printf("Digite o número de pontos turisticos da 2º cidade: ");
     scanf("%d", &npt2);
 
-   // calculo de densidade populacional pop1/area1 adicionei o double ao invés do float para corrigir problemas com a precisão dos números
+    //Calculo da densidade populacional e pib per capita usando o double para corrigir problemas de precisão númerica
     double densp1 = (double)pop1 / area1; 
-    //calculo de pipb per capita: pib1/pib2 adicionei o double ao invés do float para corrigir problemas com a precisão dos números
     double pipc1 = pib1 / (double)pop1; 
 
     printf("\n\nCarta 1:\n");
@@ -81,11 +83,10 @@ int main() {
     printf("Área: %.4f km²\n", area1);     
     printf("PIB: %.2f\n", pib1);       
     printf("Pontos Turisticos: %d\n", npt1);
-    // exibição dos resultados do desafio
     printf("A Densidade Populacional é: %.4f\n", densp1);
     printf("O PIB p/ Capita é: %.4f\n", pipc1);
 
-    // o mesmo que a linha 71 e 73
+ 
     double densp2 = (double)pop2 / area2;
     double pipc2 = pib2 / (double)pop2;
 
@@ -97,9 +98,50 @@ int main() {
     printf("Área: %.4fkm²\n", area2);
     printf("PIB: %.2f\n", pib2);
     printf("Pontos Turisticos: %d\n", npt2);
-    // o mesmo que a linha 88
     printf("A Densidade Populacional é: %.4f\n", densp2);
     printf("O PIB p/ Capita é: %.4f\n", pipc2);
 
-    return 0 ; 
+    //calculo para inverso da densidade populacional
+    double inv_densp1 = 1.0 / densp1; 
+    double inv_densp2 = 1.0 / densp2;
+    // calculo do super poder da carta a e b
+    double superpoder1 = ((double)pop1 + area1 + (double)npt1 + pipc1) + inv_densp1;
+    double superpoder2 = ((double)pop2 + area2 + (double)npt2 + pipc2) + inv_densp2;
+
+    printf("\nO Super poder da carta 1 é: %.4f\n", superpoder1); 
+    printf("O Super poder da carta 2 é: %.4f\n", superpoder2);
+
+    // Comparação dos atributos
+    printf("\n****Comparação das Cartas*****\n");
+    printf("SE RESULTADO '1', 'CARTA 1' GANHA | SE RESULTADO '0', 'CARTA 2' GANHA\n");
+
+    int resul_pop = (pop1 > pop2);
+    printf("\nAtributo População:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", resul_pop);
+
+    int resul_area = (area1 > area2);
+    printf("\nAtributo Área:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", resul_area);
+
+    int resul_pib = (pib1 > pib2);
+    printf("\nAtributo PIB:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", resul_pib);
+
+    int resul_npt = (npt1 > npt2);
+    printf("\nAtributo Pontos Turisticos:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", resul_npt);
+
+    int result_dens = (densp1 > densp2);
+    printf("\nAtributo Densidade Populacional:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", result_dens);
+
+    int result_pippc = (pipc1 > pipc2);
+    printf("\nAtributo PIB p/ Capita:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", result_pippc);
+
+    int resul_super_p = (superpoder1 < superpoder2); 
+    printf("\nAtributo Superpoder:\n");
+    printf(" Vencedor (1=Carta 1, 0=Carta 2): %d\n", resul_super_p);
+
+    return 0;
 }
