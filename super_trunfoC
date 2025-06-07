@@ -1,5 +1,7 @@
 //Desafio1 usando estruturas basicas(printf e scanf) para armazenar duas cartas de super trunfo
+//Desafio2 Adicionei calculos precisos usando os conceitos de conversão de tipagem de dados 
 
+// desafio cartas do supertrunfo
 #include <stdio.h>
 
 int main() {
@@ -66,7 +68,11 @@ int main() {
     printf("Digite o número de pontos turisticos da 2º cidade: ");
     scanf("%d", &npt2);
 
-    //exibição carta 1
+   // calculo de densidade populacional pop1/area1 adicionei o double ao invés do float para corrigir problemas com a precisão dos números
+    double densp1 = (double)pop1 / area1; 
+    //calculo de pipb per capita: pib1/pib2 adicionei o double ao invés do float para corrigir problemas com a precisão dos números
+    double pipc1 = pib1 / (double)pop1; 
+
     printf("\n\nCarta 1:\n");
     printf("Estado: %c\n", est1);
     printf("Codigo: %c%s\n", est1, codcar1);
@@ -75,8 +81,14 @@ int main() {
     printf("Área: %.4f km²\n", area1);     
     printf("PIB: %.2f\n", pib1);       
     printf("Pontos Turisticos: %d\n", npt1);
+    // exibição dos resultados do desafio
+    printf("A Densidade Populacional é: %.4f\n", densp1);
+    printf("O PIB p/ Capita é: %.4f\n", pipc1);
 
-    //exibição carta 2
+    // o mesmo que a linha 71 e 73
+    double densp2 = (double)pop2 / area2;
+    double pipc2 = pib2 / (double)pop2;
+
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", est2);
     printf("Codigo: %c%s\n", est2, codcar2);
@@ -85,7 +97,9 @@ int main() {
     printf("Área: %.4fkm²\n", area2);
     printf("PIB: %.2f\n", pib2);
     printf("Pontos Turisticos: %d\n", npt2);
-    
-    // fim do programa
-    return 0;
+    // o mesmo que a linha 88
+    printf("A Densidade Populacional é: %.4f\n", densp2);
+    printf("O PIB p/ Capita é: %.4f\n", pipc2);
+
+    return 0 ; 
 }
