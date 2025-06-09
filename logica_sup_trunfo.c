@@ -2,6 +2,9 @@
 
 /** 2.1 Foi criado a logica com estrutura de if e else para comparar qual atributo venceu com incrementação++ 
  * para definir qual carta ganhou */
+/* 2.2 Adiconado menu interativo com switch, comparação dos atributos regtas de comparação onde a carta com o maior valor
+no atributo escolhido vence,  com excesão da densidade demografica que vence o melhor valor, retirado o atributo super poder */
+
 #include <stdio.h>
 
 int main() {
